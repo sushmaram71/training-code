@@ -1,0 +1,25 @@
+<h2> {{title}} </h2>
+<div class="container">
+  <div class="row">
+  <div class="col-lg-4"> </div>
+<div class="col-lg-4" style="background-color: aqua;">
+  
+    <form [formGroup]= "register" (ngSubmit)= "GetData()" (ngSubmit)= "submitData()">
+  <input type="text" placeholder="username" formControlName="name" ><br>
+  <span *ngIf= "vname && vname.invalid && vname.touched" style="color: red"> Enter valid data </span>
+  <br>
+  <br>
+  <input type="password" placeholder="password" formControlName="password"><BR>
+  <span *ngIf= "vpwd && vpwd.invalid && vpwd.touched" style="color: red"> Enter valid data </span>
+  
+  <br>
+  <br>
+  <input type="email" placeholder="email" formControlName="email"><br>
+  <span *ngIf= "vemail && vemail.invalid && vemail.touched" style="color: red"> Enter valid data </span>
+  <br>
+  <br>
+  <button [disabled]= "register.invalid" type="submit">Submit</button>
+</form>
+</div>
+</div>
+</div>
